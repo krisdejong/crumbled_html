@@ -1,0 +1,74 @@
+ul.faq {
+    @include grid-container;
+    margin: 0 0 0 0;
+
+    @media (min-width: $breakpoint-20) {
+        @include grid(48, -2);
+    }
+
+    li {
+        position: relative;
+        display: flex;
+        min-height: 48px;
+        align-items: center;
+        margin-top: 4.16667%;
+
+        @media (min-width: $breakpoint-20) {
+            @include grid(24, 2);
+            &:nth-child(2n+1) { clear: left;  }
+        }
+    }
+
+    h3 {
+        font-weight: bold;
+        padding: 0;
+        color: $color-neutral-90;
+        font-size: 1.125em;
+        line-height: 1.25em;
+
+        @media (min-width: $breakpoint-20) {
+             font-size: 1.125em;
+             line-height: 1.25em;
+        }
+    }
+}
+
+i.faq--icon {
+    height: 48px;
+    width: 48px;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    border: 2px solid $color-tint-50;
+    border-radius: 100%;
+    text-align: center;
+
+    svg {
+        height: 48px;
+        width: 48px;
+        text-align: center;
+        vertical-align: middle;
+        display: inline-block;
+        position: relative;
+        left: -2px;
+        top: -1px;
+        // top: calc(50% - 13px);
+        fill: $color-tint-50;
+    }
+}
+
+div.faq--content {
+    position: relative;
+    padding: 0.8rem 0 0 68px;
+    padding: 0 0 0 68px;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    p {
+        position: relative;
+        max-width: 100%;
+        margin-bottom: 0;
+    }
+}

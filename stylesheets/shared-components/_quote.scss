@@ -1,0 +1,157 @@
+// =========== Quote
+
+blockquote {
+    color: $color-neutral-90;
+    margin-bottom: $spacing;
+    padding: $spacing $spacing $spacing 2.5rem;
+    position: relative;
+    quotes: none;
+    position: relative;
+    font-weight: 400;
+    border-radius: $border-radius-20;
+
+    &:before {
+        transform: skew(-15deg);
+        content: '';
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        border-radius: $border-radius-20 0 0 $border-radius-20;
+        z-index: 1;
+        position: absolute;
+        background: $color-brand-50;
+        width: 10px;
+        box-shadow: 0 1px 2px rgba($black, 0.1);
+    }
+
+    &:after {
+        transform: skew(-15deg);
+        content: '';
+        left: 0;
+        top: 0;
+        bottom: 0;
+        border-radius: $border-radius-20;
+        z-index: -1;
+        position: absolute;
+        background: $white;
+        box-shadow: 0 1px 2px rgba($black, 0.1);
+        width: 100%;
+    }
+
+    cite {
+        display: block;
+        font-size: $font-size-20;
+        margin-top: 1rem;
+
+        &:before { content: "\2014 \0020"; }
+    }
+
+    p {
+        font-size: 0.938em;
+        line-height: 1.375em;
+        margin-bottom: $spacing;
+
+        @media (min-width: $breakpoint-20) {
+            font-size: 1em;
+        }
+
+        @media (min-width: $breakpoint-30) {
+             font-size: 1.125em;
+             line-height: 1.6em;
+        }
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+}
+
+ul.quotes-list {
+    margin: 0 0 0 0;
+    list-style: none;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
+    overflow-x: auto;
+    position: relative;
+    z-index: $z-index-20;
+    -webkit-overflow-scrolling: touch;
+
+    @media (min-width: $breakpoint-40) {
+        white-space: normal;
+        overflow: visible;
+    }
+
+    li {
+        display: inline-block;
+        margin: 0 -0.15rem;
+        position: relative;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        @media (min-width: $breakpoint-20) {
+            @include grid(9.6, 0.25);
+        }
+
+        &:hover {
+            div {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+                transition: 0.1s ease;
+            }
+        }
+    }
+
+    figure {
+        width: 220px;
+        height: 180px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        text-align: left;
+        margin-bottom: 0;
+
+        @media (min-width: $breakpoint-20) {
+            width: 100%;
+        }
+    }
+
+    div {
+        border-radius: $border-radius-20;
+        background: $color-neutral-90; 
+        opacity: 0;
+        position: absolute;
+        top: -4rem;
+        left: 1rem;
+        right: 1rem;
+        background: $black;
+        visibility: hidden;
+        padding: 1rem;
+        color: $white;
+        transform: translateY(-100%);
+        z-index: $z-index-20;
+        font-size: $font-size-20;
+
+        &:before {
+            content: '';
+            width: 0; 
+            height: 0; 
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 5px solid $color-neutral-90;
+            position: absolute;
+            bottom: -5px;
+            left: calc(50% - 5px);
+
+        }
+    }
+}

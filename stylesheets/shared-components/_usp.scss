@@ -1,0 +1,35 @@
+ul.usp {
+    margin: 1.063rem 0 $spacing 0;
+
+    li {
+        position: relative;
+        padding: 0 0 0 22px;
+        display: block;
+        align-items: center;
+        margin-top: 0.52083%;
+        font-size: $font-size-15;
+    }
+
+}
+
+i.usp--icon {
+    height: 16px;
+    width: 16px;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    text-align: center;
+    top: 0;
+
+    svg {
+        height: 12px;
+        width: 12px;
+        text-align: center;
+        vertical-align: middle;
+        display: inline-block;
+        position: relative;
+        top: calc(50% - 9px);
+        fill: $color-success-50;
+        left: -1px;
+    }
+}

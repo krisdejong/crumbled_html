@@ -1,0 +1,23 @@
+div.l-wrapper {
+    
+    &.is-white {
+        background: $white; 
+        border-top: 1px solid $color-neutral-30;
+        border-bottom: 1px solid $color-neutral-30;
+    }
+
+    &.has-tint {
+        background: $color-brand-50;
+
+        h2 {
+         
+        }
+
+        p {
+            color: $white;
+            // font-family: $font-family-heading;
+            letter-spacing: 1px;
+            word-spacing: 0.04em;
+        }
+    }
+}    

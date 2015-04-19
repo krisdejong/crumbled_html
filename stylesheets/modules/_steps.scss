@@ -1,0 +1,116 @@
+ol.steps {
+    margin: 0;
+    counter-reset: li; 
+    list-style: none;
+    display: block;
+    width: 100%;
+    position: relative;
+
+    &:before {
+        content: '';
+        width: 1px;
+        background: $white;
+        position: absolute;
+        top: 0;
+        bottom: 40%;
+        left: 0;
+        display: none;
+
+        @media (min-width: $breakpoint-10) {
+            top: 15.25rem;
+            left: 16%;
+            right: 16%;
+            height: 1px;
+            bottom: auto;
+            width: auto;
+            display: inline-block;
+        }
+    }
+
+    @media (min-width: $breakpoint-20) {
+            @include grid(48);
+    }
+
+    @media (min-width: $breakpoint-40) {
+            @include grid(48, 2);
+    }
+
+     li {
+        margin-top: 0.85rem;
+        position: relative;
+        padding: 0em 0 0 2.5rem;
+        border-top: 0;
+
+        display: inline-block;
+        border-left: 1px solid $white;
+        
+        &:last-child {
+            border-left: 0;
+        }
+
+        @media (min-width: $breakpoint-20) {
+            @include grid(16, 1.5);
+            padding: 14.15rem 0 0 0;
+            border: 0;
+            text-align: center;
+        }
+
+
+        &:before {
+            content: counter(li);
+            counter-increment: li;
+            position: absolute;
+            background: $white;
+            line-height: 1;
+            left: -1rem;
+            font-size: 1.125rem;
+            top: -0.75rem;
+            color: $black;
+            border-radius: 100%;
+            width: 2rem;
+            font-weight: 600;
+            height: 2rem;
+            font-family: $font-family-heading; 
+            padding: 0.5rem 0 0 0;
+            text-align: center;
+            display: inline-block;
+
+            @media (min-width: $breakpoint-20) {
+                position: relative;
+                left: 0;
+                top: -0.688rem;
+            }
+        }
+    }
+
+    p {
+        font-weight: bold;
+
+        @media (min-width: $breakpoint-20) {
+            margin-bottom: 0.5rem;
+        }
+    }
+}
+
+
+figure.steps--image {
+    height: 11rem;
+    width: 11rem;
+    overflow: hidden;
+    background-size: 100%;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-bottom: 0.5rem;
+    height: 5rem;
+    width: 5rem;
+
+    @media (min-width: $breakpoint-20) {
+        position: absolute;
+        height: 11rem;
+        width: 11rem;
+        left: calc(50% - 5.5rem);
+    }
+}

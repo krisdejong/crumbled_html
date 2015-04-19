@@ -1,0 +1,347 @@
+// =========== Forms
+
+input[type=search] { -webkit-appearance: textfield; }
+
+input[type=search]::-webkit-search-decoration { -webkit-appearance: none; }
+
+input[type=text],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=email],
+input[type=tel],
+input[type=url],
+textarea,
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 2px solid $color-neutral-30;
+    color: inherit;
+    display: block;
+    font-family: $font-family-body;
+    font-size: $font-size-30;
+    line-height: 1.5em;
+    margin: 0;
+    padding: 0.55rem 0.75rem 0.45rem 0.75rem;
+    vertical-align: baseline;
+    width: 100%;
+
+    &:focus {
+        animation: kiss-in 0.2s ease-out forwards;
+        background: rgba($color-tint-50, 0.05);
+        //border-bottom: 2px solid $color-tint-50;
+        outline: 0;
+        transition: background, border 0.2s ease;
+    }
+
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        padding-top: 0.6rem;
+        padding-bottom: 0.6rem;
+    }
+}
+
+textarea {
+    display: block;
+    overflow: auto;
+    resize: vertical;
+    vertical-align: top;
+    max-height: 12.6rem;
+}
+
+select {
+    -webkit-appearance: menulist;
+    height: 2.85rem;
+}
+
+form {  }
+
+fieldset {  }
+
+legend {
+    width: 100%;
+    clear: both;
+    border: 0;
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid $color-neutral-30;
+    margin-bottom: $spacing;
+}
+
+ul.form,
+ul.gform_fields {
+    list-style: none;
+    @include grid-container;
+    margin: 0 0 $spacing 0;
+
+    @media (min-width: $breakpoint-10) {
+        @include grid(48, -0.5);
+    }
+
+    > li {
+        @include grid-container;
+        margin-bottom: 0.25rem;
+    }
+
+    > li > label {
+        clear: left;
+        text-transform: uppercase;
+        cursor: pointer;
+        display: inline-block;
+        font-weight: bold;
+        padding-bottom: 0.15rem;
+        padding-top: 0.55rem;
+        text-align: left;
+        color: $color-neutral-80;
+        font-size: $font-size-10;
+        position: relative;
+        width: 100%;
+
+        @media (min-width: $breakpoint-10) {
+            @include grid(16, 0.5);
+            text-align: right;
+        }
+
+        &:hover { color: $color-neutral-90; }
+    }
+
+    div.form--fields {
+        margin-bottom: 0.5rem;
+
+        @media (min-width: $breakpoint-10) {
+            @include grid(32, 0.5);
+        }
+
+        p, small, .gfield_description {
+            display: block;
+            margin: 0.5rem 0;
+            font-size: 0.938em;
+        }
+
+        p.form--description { margin: 0.5rem 0; }
+    }
+
+    .gfield_description {
+        color: $color-neutral-80;
+        font-size: $font-size-20;
+        display: block;
+        margin: 0.25rem 0;
+    }
+
+    .gfield_required {
+        color: $color-tint-50;
+        margin-left: 0.25rem;
+        display: inline;
+        font-size: 1.125rem;
+        position: relative;
+        top: 0.25rem;
+
+    }
+
+    label.validation_message {
+        font-size: $font-size-20;
+        display: block;
+    }
+}
+
+#gform_1 {
+    li:nth-child(2n+1) {
+        clear: none;
+    }
+
+    div.gform_footer {
+        text-align: right;
+        padding: 0 0.15rem 0 0;
+    }
+}
+
+
+
+ul.form--checklist {
+    list-style: none;
+    margin: 0.5rem 0;
+
+    li { margin: 0.5rem 0; }
+
+    input { margin-right: 0.5rem; }
+
+    label {
+        cursor: pointer;
+
+        &:hover { color: $color-neutral-90; }
+    }
+}
+
+ul.gfield_checkbox,
+ul.gfield_radio {
+    list-style: none;
+    margin: 0.5rem 0;
+    font-size: 0.938em;
+    line-height: 1.5em;
+    margin-bottom: $spacing;
+
+    @media (min-width: $breakpoint-20) {
+        font-size: 1em;
+    }
+
+    @media (min-width: $breakpoint-30) {
+         font-size: 1.125em;
+         line-height: 1.6em;
+    }
+
+    li {
+        position: relative;
+        margin-top: 1.125rem;
+        // padding-left: 1.85rem;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    input {
+        position: absolute;
+        left: 0.3rem;
+        top: 0.25rem;
+    }
+
+    label {
+        cursor: pointer;
+        display: inline-block;
+    }
+
+    small {
+        display: block;
+    }
+}
+
+li.form--valid {
+    div.form--fields {
+        position: relative;
+        overflow: hidden;
+
+        &:after {
+            background: url(../images/check.svg) no-repeat;
+            background-size: 100%;
+            content: '';
+            position: absolute;
+            top: 0.95rem;
+            right: 0.75rem;
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+            animation: valid-form 0.1s ease-out 0 forwards;
+            opacity: 0;
+        }
+
+    }
+
+    input,
+    input:focus {
+        background: rgba($color-tint-50, 0.1);
+        border-color: $color-success-50;
+    }
+}
+
+li.form--error,
+li.gfield_error {
+
+    label {
+        //color: $color-brand-50;
+
+        //&:hover { color: $color-brand-50; }
+    }
+
+    input,
+    input:focus {
+        border: 2px solid $color-brand-50;
+    }
+
+    textarea {
+        border: 2px solid $color-brand-50;
+    }
+
+    ul.form--errors ,
+    .validation_message, {
+        color: $color-brand-50;
+        list-style: none;
+        font-weight: 500;
+        padding: 0.3rem 0.75rem 0.25rem 0.75rem;
+        background: rgba($color-brand-50, 0.06);
+        margin: 0 0 0.25rem 0;
+
+        li {
+            font-size: $font-size-20;
+        }
+    }
+}
+
+input[type="radio"] {
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor:pointer;
+    outline: none;
+    display: inline-block;
+    background: $white;
+    border: 2px solid $color-neutral-60;
+    width: 18px;
+    height: 18px;
+    padding: 1px;
+    position: relative;
+    top: 0.1rem;
+    vertical-align: top;
+    left: 0;
+    margin: 0 0.25rem 0 0;
+    border-radius: 100%;
+
+    position: relative;
+    &::-ms-expand {
+        display: none;
+    }
+}
+input[type="radio"]:checked {
+    border: 2px solid $color-tint-60;
+}
+
+input[type="radio"]:checked:before {
+    background: $color-tint-50;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    content: '';
+    right: 3px;
+    bottom: 3px;
+    z-index: 999;
+    border-radius: 100%;
+}
+
+@keyframes kiss-in {
+    0% {
+        transform: scale(1);
+    }
+
+    66% {
+        transform: scale(1.02);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes valid-form {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);;
+    }
+
+    66% {
+
+    }
+
+    100% {
+        transform: scale(1) translateX(0);
+        opacity: 1;
+    }
+}

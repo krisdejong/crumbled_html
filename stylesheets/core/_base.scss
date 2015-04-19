@@ -1,0 +1,351 @@
+// =========== Base
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+::selection {
+    background: $color-neutral-90;
+    color: $white;
+}
+
+html {
+    background: $color-neutral-10;
+    color: $color-neutral-90;
+    font: 400 $font-size-base $font-family-body;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: auto;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    line-height: 1.5em;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    letter-spacing: 0.1px;
+}
+
+h1, h2, legend, h3, h4, h5, h6 {
+    font-family: $font-family-heading;
+    font-weight: 700;
+    line-height: 1.5em;
+    color: $color-neutral-90;
+    margin: 0 0 0.75em 0;
+    letter-spacing: 1px;
+    word-spacing: 0.04em;
+    padding-top: 0.5rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+
+    &.is-light {
+        color: $white;
+        font-weight: bold;
+    }
+}
+
+h1 { 
+    font-size: 2em; 
+    line-height: 1.25em;
+    padding-top: 0;
+
+    @media (min-width: $breakpoint-20) {
+         font-size: 2.5em; 
+         line-height: 1.125em;
+    }
+
+    @media (min-width: $breakpoint-30) {
+         font-size: 2.5em; 
+         line-height: 1.063em;
+    }
+    @media (min-width: $breakpoint-40) {
+         font-size: 2.5em; 
+         line-height: 1.05em;
+    }
+}
+
+h2, 
+.product--title.is-large {
+    font-size: 1.625em; 
+    line-height: 1.15384615em;
+
+    @media (min-width: $breakpoint-20) {
+         font-size: 1.75em; 
+         line-height: 1.25em;
+    }
+
+    @media (min-width: $breakpoint-30) {
+         font-size: 1.75em; 
+    }
+}
+
+h3 {
+    font-size: 1.375em;
+    line-height: 1.13636364em; 
+
+    @media (min-width: $breakpoint-20) {
+         font-size: 1.5em; 
+         line-height: 1.25em;
+    }
+
+    @media (min-width: $breakpoint-30) {
+         font-size: 1.75em; 
+         line-height: 1.25em;
+    }   
+}
+
+h4,
+legend { 
+    font-size: 1.125em;
+    line-height: 1.11111111em; 
+
+    @media (min-width: $breakpoint-20) {
+         font-size: 1.125em; 
+         line-height: 1.25em;
+    }
+
+    @media (min-width: $breakpoint-30) {
+         font-size: 1.25em; 
+         line-height: 1.25em;
+    }   
+}
+
+h5 {
+    font-size: 1.125em;
+    line-height: 1.11111111em; 
+
+    @media (min-width: $breakpoint-20) {
+         font-size: 1.125em; 
+         line-height: 1.25em;
+    }
+
+    @media (min-width: $breakpoint-30) {
+         font-size: 1.125em; 
+         line-height: 1.25em;
+    }   
+}
+
+h6 { font-size: 1rem; }
+
+p {
+    font-size: 0.938em;
+    line-height: 1.5em;
+    margin-bottom: $spacing; 
+
+    @media (min-width: $breakpoint-30) {
+         font-size: 1em;
+         line-height: 1.75em;
+    }       
+
+    &.is-lead { 
+        font-size: $font-size-40;
+        font-weight: 600;
+        line-height: 1.5em;
+
+        @media (min-width: $breakpoint-20) { 
+            font-size: 1.063em;
+            line-height: 1.65em;
+        }   
+
+        @media (min-width: $breakpoint-30) {
+            line-height: 1.7em;
+            font-size: $font-size-60;
+        }  
+    }
+
+    &.has-no-spacing {
+        margin-bottom: 0;
+    }
+
+    &.has-large-spacing {
+        margin-bottom: 3.15rem;
+    }
+}
+
+a {
+    color: $color-brand-50;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+
+    &:hover { 
+        color: $color-brand-60; 
+
+       &:before {
+            transform: translateY(-2px);
+            transition: transform 0.1s ease;
+            transform-origin: 50%;
+        }
+    }
+
+    &:before {
+        content: '';
+        left: 0;
+        bottom: 0px;
+        z-index: 1;
+        position: absolute;
+        background: $color-brand-50;
+        width: 100%;
+        height: 1px;
+        opacity: 1;
+        transform-origin: 50%;
+    }
+}
+
+small {
+    color: $color-neutral-70;
+    font-size: 0.813rem;
+
+    @media (min-width: $breakpoint-10) {
+        font-size: 0.875rem;
+    }
+}
+
+em { font-style: italic; }
+
+strong { 
+    font-weight: 600;
+}
+
+code, pre { font-family: 'courier new', monospace; }
+
+pre { overflow-x: auto; }
+
+abbr { border-bottom: 1px dotted $color-neutral-50; }
+
+del { text-decoration: line-through; }
+
+mark { background-color: lighten(yellow, 35%); }
+
+hr {
+    background-color: transparent;
+    border: solid $color-neutral-30;
+    border-width: 1px 0 0;
+    clear: both;
+    margin: 2.5rem $spacing;
+}
+
+
+// Lists
+ul, ol { 
+    margin: 0 0 $spacing $spacing; 
+
+    @media (min-width: $breakpoint-20) {
+         line-height: 1.375em;
+    }   
+
+    @media (min-width: $breakpoint-20) {
+         line-height: 1.5em;
+    }       
+}
+
+ul.list {
+    li {
+        margin-top: 0.85rem;
+        position: relative;
+        padding: 1rem 0 0 2.5rem;
+        border-top: 1px solid $color-neutral-30;
+
+        &:first-child {
+            margin-top: 0;
+            border-top: 0;
+        }
+
+        &:before {
+            transform: skew(-15deg);
+            content: '';
+            left: 1.125rem;
+            top: 1.5rem;
+            height: 0.75rem;
+            z-index: 1;
+            position: absolute;
+            background: $color-brand-50;
+            width: 8px;
+        }
+    }
+}
+
+ol.list {
+    list-style: none;
+    counter-reset: li; 
+    
+    li {
+        margin-top: 0.85rem;
+        position: relative;
+        padding: 0.85rem 0 0 2.5rem;
+        border-top: 1px solid $color-neutral-30;
+
+        &:before {
+            content: counter(li);
+            counter-increment: li;
+            position: absolute;
+            line-height: 1;
+            left: 0.5rem;
+            font-size: 1rem;
+            top: 1.125rem;
+            color: $color-brand-50;
+            border-radius: 100%;
+            width: 1.5rem;
+            font-weight: 600;
+            height: 1.5rem;
+            font-family: $font-family-heading; 
+            padding: 2px 0 0 0;
+            text-align: center;
+            display: inline-block;
+        }
+
+        &:first-child {
+            margin-top: 0;
+            border-top: 0;
+        }
+    }
+}
+
+
+ul.list,
+ol.list {
+    font-size: 0.938em;
+    line-height: 1.375em;
+     margin: 0 0 $spacing 0; 
+
+    @media (min-width: $breakpoint-20) { 
+        margin: 0 0 $spacing $spacing; 
+        font-size: 1em;
+    }   
+
+    @media (min-width: $breakpoint-30) {
+         font-size: 1.125em;
+         line-height: 1.6em;
+    }  
+}
+
+ul { list-style: none; }
+
+ol { list-style: decimal; }
+
+dl {
+    @include grid-container;
+    margin-bottom: $spacing;
+    line-height: 2em;
+
+    dt { 
+        font-weight: bold; 
+
+         @media (min-width: $breakpoint-20) {
+            @include grid(24, 0, 1); 
+         }
+    }
+    dd { 
+         @media (min-width: $breakpoint-20) {
+            @include grid(24); 
+            text-align: right;
+        }
+    }
+}

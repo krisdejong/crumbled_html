@@ -1,0 +1,150 @@
+
+.product {
+    position: relative;
+    z-index: 1;
+    background: $white;
+    box-shadow: 0 1px 2px rgba($black, 0.1);
+    border-radius: $border-radius-10;
+
+    &.is-small {
+        background: $color-neutral-10;
+        box-shadow: 0 0 0;
+
+        .product--content {
+            padding: 1rem;
+        }
+
+        .product--image {
+            height: 100px;
+        }
+
+        .product--title {
+            font-size: $font-size-10;
+        }
+
+        .product--price {
+            margin-bottom: 0;
+            font-size: $font-size-10;
+        }
+    }
+
+    .button {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+
+
+        @media (min-width: $breakpoint-20) {
+            right: 1.5rem;
+            top: 1.5rem;
+        }
+
+        svg.icon {
+            position: absolute;
+            top: 0.7rem;
+            left: 1rem;
+        }
+
+        span {
+            width: 0px;
+            color: $white;
+            float: left;
+            overflow: hidden;
+        }
+
+        &:hover {
+
+            span {
+                width: 100%;
+                padding: 0 0 0 1rem;
+            }
+        }
+    }
+
+    a {
+        display: block;
+
+        &:before {
+            display: none;
+        }
+
+        &:hover {
+            color: $color-brand-50;
+
+            .product--image {
+                transform: scale(1.1);
+                transition: transform 0.2s ease; 
+            }   
+        }
+    }
+}
+
+.product--content {
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+
+    @media (min-width: $breakpoint-20) {
+        padding: 1.5rem;
+    }
+}
+
+.product--image {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: relative;
+    top: 0;
+    height: 180px;
+    width: 100%;
+    margin-bottom: 0;
+
+}
+
+.product--title {
+    font-size: $font-size-20;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0.25em;
+}
+
+.product--price {
+    font-size: $font-size-20;
+    white-space: no-wrap;
+    color: $color-neutral-60;
+    text-overflow: ellipsis;
+    position: relative;
+    display: inline-block;
+    padding: 0 0.95rem 0 0;
+    margin-bottom: 1rem;
+
+    small {
+        font-size: $font-size-10;
+        color: $color-neutral-60;
+        position: absolute;
+        right: 0;
+        top: -0.1rem;
+    }
+
+    &.is-large {
+        font-size: $font-size-50;
+        padding: 0 1.25rem 0 0;
+        clear: both;
+        margin-bottom: $spacing;
+
+        small {
+            top: -0.188rem;
+        }
+    }
+}
+
+div.product-header {
+    text-align: center;
+    margin-bottom: $spacing;
+
+    h2 {
+        margin-bottom: 0.25em;
+    }
+}

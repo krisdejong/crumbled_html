@@ -1,0 +1,69 @@
+//  Taiga Boilerplate
+//  Copyright 2014 by Studio Wolf
+//  Licensed under the MIT license
+
+//  Run the following SASS command: 'sass --watch stylesheets'
+
+// =========== Includes
+
+@import
+
+// Core
+
+"core/_settings", // Set up your settings and variables first
+"core/_mixins",
+"core/_grid",
+"core/_base",
+"core/_states",
+"core/_layout",
+
+
+// Shared components
+// Components can be used generic through the application and are not connected to content.
+// Example: the component 'buttons' can be used in module 'product', 'blog-article' etc.
+
+"shared-components/_buttons",
+"shared-components/_figure",
+"shared-components/_forms",
+"shared-components/_icons",
+"shared-components/_labels",
+"shared-components/_messages",
+"shared-components/_pagination",
+"shared-components/_panels",
+"shared-components/_quote",
+"shared-components/_tables",
+"shared-components/_tabs",
+"shared-components/_checkbox-label",
+"shared-components/_search",
+"shared-components/_usp",
+
+// Modules
+// Modules are connected to a specific piece of content and can't be used without that piece of content.
+// Example: the module 'product' can't be used for a 'blog-article'.
+
+"modules/_product",
+"modules/_navigation-topbar",
+"modules/_navigation-primary",
+"modules/_navigation-mobile",
+"modules/_guide",
+"modules/_header",
+"modules/_filter",
+"modules/_footer",
+"modules/_logos",
+"modules/_faq",
+"modules/_wrapper",
+//"modules/_cookies",
+"modules/_social-links",
+"modules/_signup",
+"modules/_navigation-popout",
+"modules/_category-image",
+// "modules/_slider",
+"modules/_breadcrumbs",
+"modules/_steps",
+
+
+// Print
+
+"core/_print";
+
+

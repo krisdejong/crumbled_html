@@ -1,0 +1,48 @@
+// =========== Messages
+
+ul.messages,
+div.message,
+.gform_confirmation_message {
+    list-style: none;
+    margin: 0 0 $spacing 0;
+}
+
+li%message {
+    border-radius: $border-radius-10;
+    margin-bottom: 0.25rem;
+    padding: 0.5rem 0.75rem 0.45rem 0.75rem;
+    border-radius: $border-radius-20;
+    vertical-align: baseline;
+}
+
+li.message,
+div.message {
+    @extend li%message;
+    background: $color-brand-50;
+    color: $white;
+}
+
+li.message--neutral,
+div.message--neutral {
+    @extend li%message;
+    background: $color-neutral-30;
+    color: $color-neutral-70;
+}
+
+li.message--success,
+div.message--success,
+.gform_confirmation_message {
+    @extend li%message;
+    background: $color-success-50;
+    color: $white;
+    text-shadow: 0 1px 2px rgba($black, 0.15); 
+}
+
+li.message--alert,
+div.message--alert,
+div.validation_error {
+    @extend li%message;
+    background: $color-brand-50;
+    color: $white;
+    text-shadow: 0 1px 2px rgba($black, 0.15); 
+}

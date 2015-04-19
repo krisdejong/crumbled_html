@@ -1,0 +1,147 @@
+div.filter {
+
+
+    @media (min-width: $breakpoint-20) { 
+        @include grid(12, 1, 0); 
+    }
+
+    a.button--neutral {
+        display: block;
+        margin-top: 0.5rem;
+        margin-bottom: 0;
+    }
+}
+
+.filter--title {
+    color: $color-neutral-60;
+    font-size: 0.938em; 
+    margin-bottom: 0;
+    width: 100%;
+    font-weight: normal;
+    display: inline-block;
+
+    small {
+        position: relative;
+        float: right;
+        vertical-align: top;
+        color: $black;
+        top: 1px;
+    }
+}
+
+ul.filter--primary {
+    margin: 0;
+    list-style: none;
+
+    li {
+        border-top: 1px solid $color-neutral-30;
+
+        &.is-selected {
+            
+
+            span.label {
+                display: none;
+                top: 0.75rem;
+            }
+
+            svg.plus {
+                display: none;
+            }
+
+            svg.x {
+                display: block;
+                fill: $white;
+                width: 8px;
+                height: 8px;
+                right: 1rem;
+                top: 1rem;
+                z-index: $z-index-20;
+            }
+
+            ul.filter--secondary {
+                display: block;
+
+                a {
+                    background: none;
+                    color: $black;
+                }
+
+                span.label {
+                    display: block;
+                    top: 0.75rem;
+                }
+            }
+
+            a {
+                background: $black;
+                color: $white;
+                padding: 0.5rem 1rem;
+
+                &:hover {
+                    transform: none;
+                }
+            }
+        }
+    }
+
+    a {
+        color: $color-neutral-90;
+        font-size: $font-size-10;
+        text-transform: uppercase;
+        display: block;
+        padding: 0.75rem 0;
+        position: relative;
+
+        &:before {
+            display: none;
+        }
+        
+
+        &:hover {
+            transform: translateX(2px);
+            transition: transform 0.15s ease;
+            color: $color-brand-50;
+
+            svg.icon { 
+                transform: rotate(180deg);
+                transition: transform 0.15s ease;
+            }
+
+        }
+
+        span.label {
+            position: absolute;
+            right: 0;
+            top: 1rem;
+            display: none;
+        }
+
+        svg.icon {
+            position: absolute;
+            right: 0;
+            top: 1.25rem;
+            width: 10px;
+            height: 10px;
+            transform: rotate(0);
+        }
+    }
+}
+
+ul.filter--secondary {
+    display: none;
+    margin: 0.5rem 0 1rem 0;
+
+    li {
+        border-top: 0;
+        margin-top: 0;
+    }
+
+    a {
+        text-transform: none;
+        padding: 0.25rem 0;
+
+        span.label {
+            top: 0.45rem;
+        }
+    }
+}
